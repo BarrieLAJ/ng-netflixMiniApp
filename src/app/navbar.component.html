@@ -1,13 +1,13 @@
-<nav class="navbar navbar-expand-xl navbar-dark">
-    <div class="container">
+<nav class="navbar navbar-expand-xl navbar-dark container-fluid">
+    <div class="container-fluid">
         <a href="" class="navbar navbar-brand text-danger mr-5">NetFlix</a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#netresponsive">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <form class="form-inline my-2 my-lg-0 mx-5">
-            <input type="text" class="form-control mr-2 my-lg-0"/>
-            <button class="btn btn-danger" type="submit">Search</button><
+        <form class="form-inline my-2 my-sm-0 mx-5">
+            <input type="text" class="form-control mr-2 my-sm-0"/>
+            <button class="btn btn-danger" type="submit"><!--<i class="fa-search"></i>-->Search</button>
         </form>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#netresponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         <div class="collapse navbar-collapse ml-5" id="netresponsive">
             <ul class="navbar-nav list-inline">
                 <li class="nav-item list-inline-item"><a class="nav-link" [routerLink]="['/movies']" routerLinkActive="active">Movies</a></li>
@@ -17,3 +17,6 @@
         </div>
     </div>
 </nav>
+<br>
+<br>
+<br>
