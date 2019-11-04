@@ -44,3 +44,44 @@
             </ul>
         </div>
     </div>
+        <div class="back-drop" style="background-attachment: fixed; background-image: url(backdrop);">
+            <div class="row">
+                <div class="col-sm-6">
+                    <header class="tvshow-title">{{tvshow?.name | uppercase}}</header>
+                    <p class="tvshow-overview">{{tvshow?.overview}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row text-white">
+            <div class="col-md-3">
+                    Released<span class="rel-date">{{tvshow?.first_air_date | date:'shortDate'}}</span>
+            </div>
+            <div class="col-md-3">
+                Popularity<span class="badge badge-success">{{tvshow?.popularity | number}}</span>
+            </div>
+            <div class="col-md-3">
+                Votes<span class="badge badge-success">{{tvshow?.vote_average | number}}</span>
+            </div>
+            <div class="col-md-3">
+                Runtime<span class="badge badge-success">{{tvshow?.current_season}}</span>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <h4 class="clearfix">Genre</h4>
+            <br><br>
+            <ul class="list-genre list-inline">
+                <li class="list-inline-item text-white" *ngFor="let genre of tvshow.genre_ids">{{genre}}</li>
+            </ul>
+        </div>
+        <div class="row">
+            <h4>Overview</h4>
+            <p class="tvshow-overview">{{tvshow?.overview}}</p>
+        </div>
+        <div class="row">
+            <h4>Casts</h4>
+            <ul class="list-casts list-inline">
+                <li class="list-inline-item text-white" *ngFor="let genre of tvshow.genre_ids">{{genre}}</li>
+            </ul>
+        </div>
+</div>
+
