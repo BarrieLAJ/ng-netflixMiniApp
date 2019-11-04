@@ -31,14 +31,14 @@ import { ActivatedRoute } from '@angular/router'
         margin-top: 30px;
         margin-bottom: 30px;
     }
-    .movie-title{
+    .tvshow-title{
         color: #eaeaea;
         font-size: 2.0em;
         letter-spacing: 3px;
         font-weight: bolder;
         margin-bottom: 15px;
     }
-    .movie-info{
+    .tvshow-info{
         display: flex;
         flex-flow: wrap;
     }
@@ -57,7 +57,7 @@ import { ActivatedRoute } from '@angular/router'
         padding: 1em;
         color: #eaeaea;
     }
-    movie-overview1{
+    tvshow-overview1{
         color: #eaeaea !important;
         font-size: 0.02em;
         font-weight: 20px;
