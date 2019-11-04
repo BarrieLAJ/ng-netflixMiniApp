@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="backdrop-wraper">
+        <img src="/alhsdj.jpg" alt="nothing" class="bg-img">
+        <div class="content-wrap">
+            <h1 class="movie-title">{{movie?.title  | uppercase}}</h1>
+            <p class="movie-overview1">{{movie?.overview}}</p>
+        </div>
+        <div class="content-wrap"></div>
+    </div>
+    <div class="movie-info">
+        <div class="info-wrap">
+            <p class="info">Release Date: </p><span class="pad-right">{{movie?.release_date | date:'shortDate'}}</span>
+        </div>
+        <div class="info-wrap">
+            <p class="info">Length </p><span class="pad-right">{{movie?.runtime}}</span>
+        </div>
+        <div class="info-wrap">
+            <p class="info">Porpularity </p><span class="pad-right">{{movie?.popularity}}</span>
+        </div>
+        <div class="info-wrap">
+            <p class="info">Votes: </p><span class="pad-right">{{movie?.vote_average}}</span>
+        </div>
+        <div class="info-wrap">
+            <p class="info">Vote Count: </p><span class="pad-right">{{movie?.vote_count}}</span>
+        </div>
+    </div>
+    <!-- Gernes -->
+    <div class="genres">
+        <h2 class="sec-name">Genres</h2>
+        <ul>
+            <li *ngFor="let genre of movie?.genre_ids" class="genre">{{genre}}</li>
+        </ul>
+    </div>
+    <!-- Overview -->
+    <div class="overview">
+        <h2 class="sec-name">Overview</h2>
+        <p class="movie-overview">{{movie?.overview}}</p>
+    </div>
+    <!-- Casts -->
+    <div class="casts">
+        <h2 class="sec-name">Casts</h2>
+        <ul>
+            <li *ngFor="let genre of movie?.genre_ids" class="cast">{{genre}}</li>
+        </ul>
+    </div>
+</div>
