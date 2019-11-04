@@ -1,8 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
+    /*-webkit-font-smoothing: antialiased;*/
     direction: ltr;
-    background-color: black;
+    background-color: rgb(28, 28, 32);
+    scroll-behavior: smooth;
+    color: rgb(245, 243, 243) !important;
 }
-
+nav{
+    position: fixed !important;
+    top: 0px;
+    display: inline-block !important;
+    z-index: 1;
+    background-color: rgba(25, 25, 27, 0.8);
+    border-radius: 1%;
+}

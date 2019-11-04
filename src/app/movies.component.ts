@@ -24,7 +24,11 @@ import { MoviesService } from './services/movies.service'
           cursor: pointer;
         }
         .thumbnail:hover{
-          background-color: rgba(50,50,50,0.5);
+         background-color: rgba(25, 25, 27, 0.4);
+         
+        }
+        .thumbnail:hover > img{
+          zoom: 1;
         }
         .thumbnail > img{
           margin-top: 5px;

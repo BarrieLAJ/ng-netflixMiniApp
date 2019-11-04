@@ -12,11 +12,11 @@ const apikey = "da51ab669d96ca4f1f9aa7cc589baec8"
 
 export class MoviesService {
     getMovies(){
-        return movies.splice(0,10)
+        return movies
     }
     getMovie(id){
         return movies.find(movie => movie.id === id)
-         let movie:IMovie
+         //let movie:IMovie
         // const getByIdbase = "https://api.themoviedb.org/3/movie/"
         // const url = `${getByIdbase}${id}?api_key=${apikey}&&language=en-US`
         // return movie = fetch(url)
