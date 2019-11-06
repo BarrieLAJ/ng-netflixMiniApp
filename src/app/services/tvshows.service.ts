@@ -9,7 +9,7 @@ const apikey = "da51ab669d96ca4f1f9aa7cc589baec8"
 
 export class TvShowsService {
     getTvshows(){
-        return tvshows.splice(0,10)
+        return tvshows
     }
     getTvshow(id){
         return tvshows.find(tvshow => tvshow.id === id) 

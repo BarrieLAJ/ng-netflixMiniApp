@@ -1,28 +1,29 @@
-<div class="container">
+<div class="container-fluid">
     <div class="backdrop-wraper">
-        <img src="/alhsdj.jpg" alt="nothing" class="bg-img">
-        <div class="content-wrap">
-            <h1 class="tvshow-title">{{tvshow?.name  | uppercase}}</h1>
-            <p class="tvshow-overview1">{{tvshow?.overview}}</p>
+        <img [src]="baseimgUrl+tvshow?.backdrop_path" alt="nothing" class="bg-img">
+        <div class="grid">
+            <div class="content-wrap">
+                <h1 class="tvshow-title">{{tvshow?.name  | uppercase}}</h1>
+                <p class="tvshow-overview1">{{tvshow?.overview}}</p>
+            </div>
         </div>
-        <div class="content-wrap"></div>
+        <div class="grid"></div>
     </div>
     <div class="tvshow-info">
         <div class="info-wrap">
-            <p class="info">Release Date: </p><span
-                class="pad-right">{{tvshow?.first_air_date | date:'shortDate'}}</span>
+            <p class="info">Aired</p><span class="pad-right badge">{{tvshow?.first_air_date | date}}</span>
         </div>
         <div class="info-wrap">
-            <p class="info">Length </p><span class="pad-right">{{tvshow?.runtime}}</span>
+            <p class="info">Length</p><span class="pad-right badge">12<!--{{tvshow?.runtime | number}}--></span>
         </div>
         <div class="info-wrap">
-            <p class="info">Porpularity </p><span class="pad-right">{{tvshow?.popularity}}</span>
+            <p class="info">Porpularity</p><span class="pad-right badge">{{tvshow?.popularity | number: '1.0-0'}}</span>
         </div>
         <div class="info-wrap">
-            <p class="info">Votes: </p><span class="pad-right">{{tvshow?.vote_average}}</span>
+            <p class="info">Vote</p><span class="pad-right badge">{{tvshow?.vote_average | percent: '0.0-0'}}</span>
         </div>
         <div class="info-wrap">
-            <p class="info">Vote Count: </p><span class="pad-right">{{tvshow?.vote_count}}</span>
+            <p class="info">Votes</p><span class="pad-right badge">{{tvshow?.vote_count}}</span>
         </div>
     </div>
     <!-- Gernes -->
