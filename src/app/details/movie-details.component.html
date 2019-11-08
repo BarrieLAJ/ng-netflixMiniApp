@@ -1,48 +1,48 @@
 <div class="container-fluid">
-        <div class="backdrop-wraper">
-            <img [src]="baseimgUrl+movie?.backdrop_path" alt="nothing" class="bg-img">
-            <div class="grid">
-                <div class="content-wrap">
-                    <h1 class="movie-title">{{movie?.title  | uppercase}}</h1>
-                    <p class="movie-overview1">{{movie?.overview}}</p>
-                </div>
-            </div>
-            <div class="grid"></div>
-        </div>
-        <div class="movie-info">
-            <div class="info-wrap">
-                <p class="info">Released:</p><span class="pad-right">{{movie?.first_air_date | date:'shortDate'}}</span>
-            </div>
-            <div class="info-wrap">
-                <p class="info">Length </p><span class="pad-right">12<!--{{movie?.runtime | number}}--></span>
-            </div>
-            <div class="info-wrap">
-                <p class="info">Porpularity </p><span class="pad-right">{{movie?.popularity | number}}</span>
-            </div>
-            <div class="info-wrap">
-                <p class="info">Vote %: </p><span class="pad-right">{{movie?.vote_average | number}}</span>
-            </div>
-            <div class="info-wrap">
-                <p class="info">Votes: </p><span class="pad-right">{{movie?.vote_count}}</span>
+    <div class="backdrop-wraper">
+        <img [src]="baseimgUrl+movie?.backdrop_path" alt="nothing" class="bg-img">
+        <div class="grid">
+            <div class="content-wrap">
+                <h1 class="movie-title">{{movie?.title  | uppercase}}</h1>
+                <p class="movie-overview1">{{movie?.overview}}</p>
             </div>
         </div>
-        <!-- Gernes -->
-        <div class="genres">
-            <h2 class="sec-name">Genres</h2>
-            <ul>
-                <li *ngFor="let genre of movie?.genre_ids" class="genre">{{genre}}</li>
-            </ul>
+        <div class="grid"></div>
+    </div>
+    <div class="movie-info">
+        <div class="info-wrap">
+            <p class="info">Aired</p><span class="pad-right badge">{{movie?.first_air_date | date}}</span>
         </div>
-        <!-- Overview -->
-        <div class="overview">
-            <h2 class="sec-name">Overview</h2>
-            <p class="movie-overview">{{movie?.overview}}</p>
+        <div class="info-wrap">
+            <p class="info">Length</p><span class="pad-right badge">12<!--{{movie?.runtime | number}}--></span>
         </div>
-        <!-- Casts -->
-        <div class="casts">
-            <h2 class="sec-name">Casts</h2>
-            <ul>
-                <li *ngFor="let genre of movie?.genre_ids" class="cast">{{genre}}</li>
-            </ul>
+        <div class="info-wrap">
+            <p class="info">Porpularity</p><span class="pad-right badge">{{movie?.popularity | number: '1.0-0'}}</span>
+        </div>
+        <div class="info-wrap">
+            <p class="info">Vote</p><span class="pad-right badge">{{movie?.vote_average | percent: '0.0-0'}}</span>
+        </div>
+        <div class="info-wrap">
+            <p class="info">Votes</p><span class="pad-right badge">{{movie?.vote_count}}</span>
         </div>
     </div>
+    <!-- Gernes -->
+    <div class="genres">
+        <h2 class="sec-name">Genres</h2>
+        <ul>
+            <li *ngFor="let genre of movie?.genre_ids" class="genre">{{genre}}</li>
+        </ul>
+    </div>
+    <!-- Overview -->
+    <div class="overview">
+        <h2 class="sec-name">Overview</h2>
+        <p class="movie-overview">{{movie?.overview}}</p>
+    </div>
+    <!-- Casts -->
+    <div class="casts">
+        <h2 class="sec-name">Casts</h2>
+        <ul>
+            <li *ngFor="let genre of movie?.genre_ids" class="cast">{{genre}}</li>
+        </ul>
+    </div>
+</div>

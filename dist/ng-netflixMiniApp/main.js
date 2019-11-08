@@ -132,6 +132,17 @@ var appRoutes = [
 
 /***/ }),
 
+/***/ "./src/app/details/movie-details.component.html":
+/*!******************************************************!*\
+  !*** ./src/app/details/movie-details.component.html ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"backdrop-wraper\">\r\n        <img [src]=\"baseimgUrl+movie?.backdrop_path\" alt=\"nothing\" class=\"bg-img\">\r\n        <div class=\"grid\">\r\n            <div class=\"content-wrap\">\r\n                <h1 class=\"movie-title\">{{movie?.title  | uppercase}}</h1>\r\n                <p class=\"movie-overview1\">{{movie?.overview}}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"grid\"></div>\r\n    </div>\r\n    <div class=\"movie-info\">\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Aired</p><span class=\"pad-right badge\">{{movie?.first_air_date | date}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Length</p><span class=\"pad-right badge\">12<!--{{movie?.runtime | number}}--></span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Porpularity</p><span class=\"pad-right badge\">{{movie?.popularity | number: '1.0-0'}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Vote</p><span class=\"pad-right badge\">{{movie?.vote_average | percent: '0.0-0'}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Votes</p><span class=\"pad-right badge\">{{movie?.vote_count}}</span>\r\n        </div>\r\n    </div>\r\n    <!-- Gernes -->\r\n    <div class=\"genres\">\r\n        <h2 class=\"sec-name\">Genres</h2>\r\n        <ul>\r\n            <li *ngFor=\"let genre of movie?.genre_ids\" class=\"genre\">{{genre}}</li>\r\n        </ul>\r\n    </div>\r\n    <!-- Overview -->\r\n    <div class=\"overview\">\r\n        <h2 class=\"sec-name\">Overview</h2>\r\n        <p class=\"movie-overview\">{{movie?.overview}}</p>\r\n    </div>\r\n    <!-- Casts -->\r\n    <div class=\"casts\">\r\n        <h2 class=\"sec-name\">Casts</h2>\r\n        <ul>\r\n            <li *ngFor=\"let genre of movie?.genre_ids\" class=\"cast\">{{genre}}</li>\r\n        </ul>\r\n    </div>\r\n</div>"
+
+/***/ }),
+
 /***/ "./src/app/details/movie-details.component.ts":
 /*!****************************************************!*\
   !*** ./src/app/details/movie-details.component.ts ***!
@@ -154,6 +165,7 @@ var MovieDetailsComponent = /** @class */ (function () {
     function MovieDetailsComponent(movieService, router) {
         this.movieService = movieService;
         this.router = router;
+        this.baseimgUrl = "https://image.tmdb.org/t/p/w1080";
     }
     MovieDetailsComponent.prototype.ngOnInit = function () {
         this.movie = this.movieService.getMovie(+this.router.snapshot.params['id']);
@@ -161,8 +173,8 @@ var MovieDetailsComponent = /** @class */ (function () {
     };
     MovieDetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'movie-details',
-            template: "\n        <div class=\"row\">\n            <h1>{{movie?.title}}</h1>\n        </div>\n    "
+            template: __webpack_require__(/*! ./movie-details.component.html */ "./src/app/details/movie-details.component.html"),
+            styles: ["@media(min-width: 50rem){\n        .backdrop-wraper .grid .content-wrap{\n            position: absolute;\n            top: 30%;\n            left: 10%;\n        }\n        .backdrop-wraper {\n            display: grid;\n            grid-template-columns: 1fr 1fr;\n        }\n        .movie-info{\n            display: flex;\n            flex-flow: wrap;\n        }\n        .info-wrap{\n            flex: 1;\n            display: flex;\n            flex-flow: row wrap;\n            align-content: flex-end;\n            justify-content: space-around;\n        }\n    }\n    .backdrop-wraper .bg-img{\n        position: absolute;\n        left: 0px;\n        width: 100%;\n        height: 300px;\n        z-index: -1;\n        opacity: 0.5;\n    }\n    .backdrop-wraper {\n        height: 300px;\n        color: #eaeaea;\n        margin-bottom: 2em;\n    }\n    .backdrop-wraper .grid {\n        column: span 2;\n    }\n    @media all and (max-width: 515px){\n        .backdrop-wraper .grid .content-wrap{\n            position: absolute;\n            top: 65%;\n            left: 10%;\n        }\n    }\n    .backdrop-wraper .grid .content-wrap{\n        padding: 1rem;\n        box-shadow: black -10px 10px 20px;\n        height: auto; \n    }\n    .movie-title{\n        color: #eaeaea;\n        font-size: 1.5em;\n        letter-spacing: 3px;\n        font-weight: bolder;\n        margin-bottom: 15px;\n    }\n    .info-wrap {\n        display: flex;\n        flex-flow: row nowrap;\n        align-content: flex-end;\n        justify-content: space-between;\n        background-color: rgba(20,20,20,0.4);\n        margin: 1em;\n        max-height: auto;\n        border-radius: 1%;\n    }\n    .info-wrap .info{\n        flex: 2  content auto;\n        text-align: left;\n        padding: 1em;\n        border-left: 1px solid lightgreen;\n        font-size: 1em;\n        color: rgb(224, 218, 218)\n    }\n    .info-wrap .pad-right{\n        flex: 1;\n        padding: 1em;\n        text-align: right;\n        font-size: 1em;\n        color: #eaeaea;\n    }\n    .movie-overview1{\n        color: #eaeaea !important;\n        font-size: .8em;\n        font-weight: 20px;\n        text-align: justify;\n        max-height: 110px;\n        max-width: 300px;\n        overflow: hidden;\n    }\n    movie-overview{\n        font-wight: normal;\n        font-size: 2em;\n        line-height: 3em;\n        letter-spacing: .04em;\n        word-spacing: normal;\n        text-align: justify;\n    }\n    .genres ul,\n    .casts ul{\n        list-style: none;\n        display: flex;\n        flex-flow: row wrap;\n    }\n    .genre,\n    .cast{ \n        flex: 1;\n        padding: 2em;\n    }\n    .sec-name{\n        margin-top: 10px;\n    }\n    "]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_movies_service__WEBPACK_IMPORTED_MODULE_2__["MoviesService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
     ], MovieDetailsComponent);
@@ -170,6 +182,17 @@ var MovieDetailsComponent = /** @class */ (function () {
 }());
 
 
+
+/***/ }),
+
+/***/ "./src/app/details/tvshow-details.component.html":
+/*!*******************************************************!*\
+  !*** ./src/app/details/tvshow-details.component.html ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"backdrop-wraper\">\r\n        <img [src]=\"baseimgUrl+tvshow?.backdrop_path\" alt=\"nothing\" class=\"bg-img\">\r\n        <div class=\"grid\">\r\n            <div class=\"content-wrap\">\r\n                <h1 class=\"tvshow-title\">{{tvshow?.name  | uppercase}}</h1>\r\n                <p class=\"tvshow-overview1\">{{tvshow?.overview}}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"grid\"></div>\r\n    </div>\r\n    <div class=\"tvshow-info\">\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Aired</p><span class=\"pad-right badge\">{{tvshow?.first_air_date | date}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Length</p><span class=\"pad-right badge\">12<!--{{tvshow?.runtime | number}}--></span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Porpularity</p><span class=\"pad-right badge\">{{tvshow?.popularity | number: '1.0-0'}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Vote</p><span class=\"pad-right badge\">{{tvshow?.vote_average | percent: '0.0-0'}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Votes</p><span class=\"pad-right badge\">{{tvshow?.vote_count}}</span>\r\n        </div>\r\n    </div>\r\n    <!-- Gernes -->\r\n    <div class=\"genres\">\r\n        <h2 class=\"sec-name\">Genres</h2>\r\n        <ul>\r\n            <li *ngFor=\"let genre of tvshow?.genre_ids\" class=\"genre\">{{genre}}</li>\r\n        </ul>\r\n    </div>\r\n    <!-- Overview -->\r\n    <div class=\"overview\">\r\n        <h2 class=\"sec-name\">Overview</h2>\r\n        <p class=\"tvshow-overview\">{{tvshow?.overview}}</p>\r\n    </div>\r\n    <!-- Casts -->\r\n    <div class=\"casts\">\r\n        <h2 class=\"sec-name\">Casts</h2>\r\n        <ul>\r\n            <li *ngFor=\"let genre of tvshow?.genre_ids\" class=\"cast\">{{genre}}</li>\r\n        </ul>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -185,16 +208,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TvShowDetailsComponent", function() { return TvShowDetailsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_tvshows_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/tvshows.service */ "./src/app/services/tvshows.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
 
 
 var TvShowDetailsComponent = /** @class */ (function () {
-    function TvShowDetailsComponent() {
+    function TvShowDetailsComponent(tvshowService, router) {
+        this.tvshowService = tvshowService;
+        this.router = router;
+        this.baseimgUrl = "https://image.tmdb.org/t/p/w1080";
     }
+    TvShowDetailsComponent.prototype.ngOnInit = function () {
+        this.tvshow = this.tvshowService.getTvshow(+this.router.snapshot.params['id']);
+        console.log(this.tvshow);
+    };
     TvShowDetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'tvshow-details',
-            template: "\n        <div class=\"row\">\n            <h1>Tv Show Title</h1>\n        </div>\n    "
-        })
+            template: __webpack_require__(/*! ./tvshow-details.component.html */ "./src/app/details/tvshow-details.component.html"),
+            styles: ["\n    @media(min-width: 50rem){\n        .backdrop-wraper .grid .content-wrap{\n            position: absolute;\n            top: 30%;\n            left: 10%;\n        }\n        .backdrop-wraper {\n            display: grid;\n            grid-template-columns: 1fr 1fr;\n        }\n        .tvshow-info{\n            display: flex;\n            flex-flow: wrap;\n        }\n        .info-wrap{\n            flex: 1;\n            display: flex;\n            flex-flow: row wrap;\n            align-content: flex-end;\n            justify-content: space-around;\n        }\n    }\n    .backdrop-wraper .bg-img{\n        position: absolute;\n        left: 0px;\n        width: 100%;\n        height: 300px;\n        z-index: -1;\n        opacity: 0.5;\n    }\n    .backdrop-wraper {\n        height: 300px;\n        color: #eaeaea;\n        margin-bottom: 2em;\n    }\n    .backdrop-wraper .grid {\n        column: span 2;\n    }\n    @media all and (max-width: 515px){\n        .backdrop-wraper .grid .content-wrap{\n            position: absolute;\n            top: 65%;\n            left: 10%;\n        }\n    }\n    .backdrop-wraper .grid .content-wrap{\n        padding: 1rem;\n        box-shadow: black -10px 10px 20px;\n        height: auto; \n    }\n    .tvshow-title{\n        color: #eaeaea;\n        font-size: 1.5em;\n        letter-spacing: 3px;\n        font-weight: bolder;\n        margin-bottom: 15px;\n    }\n    .info-wrap {\n        display: flex;\n        flex-flow: row nowrap;\n        align-content: flex-end;\n        justify-content: space-between;\n        background-color: rgba(20,20,20,0.4);\n        margin: 1em;\n        max-height: auto;\n        border-radius: 1%;\n    }\n    .info-wrap .info{\n        flex: 2  content auto;\n        text-align: left;\n        padding: 1em;\n        border-left: 1px solid lightgreen;\n        font-size: 1em;\n        color: rgb(224, 218, 218)\n    }\n    .info-wrap .pad-right{\n        flex: 1;\n        padding: 1em;\n        text-align: right;\n        font-size: 1em;\n        color: #eaeaea;\n    }\n    .tvshow-overview1{\n        color: #eaeaea !important;\n        font-size: .8em;\n        font-weight: 20px;\n        text-align: justify;\n        max-height: 110px;\n        max-width: 300px;\n        overflow: hidden;\n    }\n    tvshow-overview{\n        font-wight: normal;\n        font-size: 2em;\n        line-height: 3em;\n        letter-spacing: .04em;\n        word-spacing: normal;\n        text-align: justify;\n    }\n    .genres ul,\n    .casts ul{\n        list-style: none;\n        display: flex;\n        flex-flow: row wrap;\n    }\n    .genre,\n    .cast{ \n        flex: 1;\n        padding: 2em;\n    }\n    .sec-name{\n        margin-top: 10px;\n    }\n\n"]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_tvshows_service__WEBPACK_IMPORTED_MODULE_2__["TvShowsService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
     ], TvShowDetailsComponent);
     return TvShowDetailsComponent;
 }());
@@ -243,7 +278,7 @@ var FavoriteMoviesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"footer\">\r\n    <div class=\"row\">\r\n        <div class=\"col-lg-12\">\r\n            <span>Contact</span> <span>Contact</span>\r\n            <span>Contact</span>        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"footer\">\r\n    <div class=\"grid\">\r\n        <a href=\"faq.html\" class=\"footer-link\">FAQ</a>\r\n        <a href=\"feedback.html\" class=\"footer-link\">Feedback</a>\r\n        <a href=\"terms.html\" class=\"footer-link\">Terms Of Use</a>\r\n        <a href=\"policy.html\" class=\"footer-link\">Privacy Policy</a>\r\n    </div>\r\n    <p class=\"social\">Join us\r\n        <a href=\"shear/facebook.com\" class=\"facebook\" target=\"_blank\"><span class=\"fa fa-facebook\"></span></a>\r\n        <a href=\"shear/twitter.com\" class=\"twitter\" target=\"_blank\"><span class=\"fa fa-twitter\"></span></a>\r\n        <a href=\"shear/instergram.com\" class=\"instergram\" target=\"_blank\"><span class=\"fa fa-instagram\"></span></a>\r\n        <a href=\"shear/whatsapp.com\" class=\"whatsapp\" target=\"_blank\"><span class=\"fa fa-whatsapp\"></span></a>\r\n    </p>\r\n    <p class=\"copyright\">Copyright &copy; {{ currentYear}}</p>\r\n</div>"
 
 /***/ }),
 
@@ -263,12 +298,15 @@ __webpack_require__.r(__webpack_exports__);
 
 var FooterComponent = /** @class */ (function () {
     function FooterComponent() {
+        this.currentDate = Date.now();
+        this.theDate = new Date(this.currentDate);
+        this.currentYear = this.theDate.getFullYear();
     }
     FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'footer-app',
             template: __webpack_require__(/*! ./footer.component.html */ "./src/app/footer.component.html"),
-            styles: ["\n        .footer{\n            vertical-align: middle;\n            horizontal-align: middle;\n        }    \n    "]
+            styles: ["\n        .footer{\n            margin: auto;\n            width:100%'\n        }\n        .footer-link{\n            margin: 0.2em;\n            text-align: center;\n            text-decoration: none;\n            color: rgb(224, 218, 218);\n        }\n        .footer-link:hover{\n            color: rgb(192, 186, 186);\n        } \n        .social{\n            margin: 5px;\n            text-align: center;\n        }\n        .social a{\n            margin: 1em;\n            text-align: center;\n            text-decoration: none;\n            color: rgb(224, 218, 218);\n        }\n        .copyright{\n            margin: 5px;\n            text-align: center;\n        }\n    "]
         })
     ], FooterComponent);
     return FooterComponent;
@@ -297,7 +335,7 @@ __webpack_require__.r(__webpack_exports__);
 var MoviesComponent = /** @class */ (function () {
     function MoviesComponent(movieService) {
         this.movieService = movieService;
-        this.baseimgUrl = "https://image.tmdb.org/t/p/w154";
+        this.baseimgUrl = "https://image.tmdb.org/t/p/w300";
     }
     MoviesComponent.prototype.ngOnInit = function () {
         this.movies = this.movieService.getMovies();
@@ -306,8 +344,8 @@ var MoviesComponent = /** @class */ (function () {
     MoviesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'movies-list',
-            template: "\n    <div class=\"row\">\n        <h4 class=\"col-sm-5 text-white\" style=\"margin-left: 0px\">Movies</h4>\n        <div class=\"col-sm-7\"></div>\n        <div class=\"row\">\n                <div class=\"well thumbnail m-2 col-md-3\" [routerLink]=\"['/movie', movie.id]\"  *ngFor=\"let movie of movies\"> \n                            <img class=\"img-responsive img-border\" height=\"80%\" my-5 width=\"100%\"  [src]=\"baseimgUrl+movie?.poster_path\" [alt]=\"movie?.title\"/><br>\n                            <span class=\"movie-title text-white font-weight-16\">{{movie?.title}}</span><br>\n                            <span class=\"ml-1 text-white font-weight-16\">Popularity:<em class=\"badge bg-danger text-white\">{{movie?.popularity}}</em></span>\n                            <span class=\"ml-1 float-right text-white font-weight-16\">Vote:<em class=\"badge bg-success text-white\">{{movie?.vote_count}}</em></span><br>\n                            <span class=\"clearfix ml-1 text-white font-weight-16\">Released: {{movie?.release_date}}</span>\n                            \n                </div>\n        </div>\n    </div>",
-            styles: ["\n        .thumbnail{ \n          cursor: pointer;\n        }\n        .thumbnail:hover{\n          background-color: rgba(50,50,50,0.5);\n        }\n        .thumbnail > img{\n          margin-top: 5px;\n        }\n        .movie-title {\n          font-family: Helvertica Verdana ;\n          font-size: 1.0em;\n          text-align: center;\n        }\n    "]
+            template: "\n    <div class=\"row\">\n        <h4 class=\"col-sm-5 text-white\" style=\"margin-left: 0px\">Movies</h4>\n        <div class=\"col-sm-7\"></div>\n        <div class=\"row\">\n                <div class=\"well thumbnail m-2 col-md-3\" [routerLink]=\"['/movie', movie.id]\"  *ngFor=\"let movie of movies\"> \n                            <img class=\"img-responsive img-border\" height=\"80%\" my-5 width=\"100%\"  [src]=\"baseimgUrl+movie?.poster_path\" [alt]=\"movie?.title\"/><br>\n                            <span class=\"movie-title text-white font-weight-16\">{{movie?.title}}</span><br>\n                            <span class=\"mr-1 text-white font-weight-16\">Popularity:<em class=\"badge bg-danger text-white\">{{movie?.popularity}}</em></span>\n                            <span class=\"mr-1 float-right text-white font-weight-16\">Vote:<em class=\"badge bg-success ml-1 text-white\">{{movie?.vote_count}}</em></span><br>\n                            <span class=\"clearfix mr-1 text-white font-weight-16\">Released: <em class=\"float-right\">{{movie?.release_date | date}}</em></span>\n                            \n                </div>\n        </div>\n    </div>",
+            styles: ["\n        .thumbnail{ \n          cursor: pointer;\n        }\n        .thumbnail:hover{\n         background-color: rgba(25, 25, 27, 0.4);\n         \n        }\n        .thumbnail:hover > img{\n          zoom: 1;\n        }\n        .thumbnail > img{\n          margin-top: 5px;\n        }\n        .movie-title {\n          font-family: Helvertica Verdana ;\n          font-size: 1.0em;\n          text-align: center;\n        }\n    "]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_movies_service__WEBPACK_IMPORTED_MODULE_2__["MoviesService"]])
     ], MoviesComponent);
@@ -325,7 +363,7 @@ var MoviesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-xl navbar-dark\">\r\n    <div class=\"container\">\r\n        <a href=\"\" class=\"navbar navbar-brand text-danger mr-5\">NetFlix</a>\r\n        <button class=\"navbar-toggler\" data-toggle=\"collapse\" data-target=\"#netresponsive\">\r\n            <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n        <form class=\"form-inline my-2 my-lg-0 mx-5\">\r\n            <input type=\"text\" class=\"form-control mr-2 my-lg-0\"/>\r\n            <button class=\"btn btn-danger\" type=\"submit\">Search</button><\r\n        </form>\r\n        <div class=\"collapse navbar-collapse ml-5\" id=\"netresponsive\">\r\n            <ul class=\"navbar-nav list-inline\">\r\n                <li class=\"nav-item list-inline-item\"><a class=\"nav-link\" [routerLink]=\"['/movies']\" routerLinkActive=\"active\">Movies</a></li>\r\n                <li class=\"nav-item list-inline-item\"><a class=\"nav-link\" [routerLink]=\"['/tvshows']\">TV/Shows</a></li>\r\n                <li class=\"nav-item list-inline-item\"><a class=\"nav-link\" [routerLink]=\"['/favorite']\">Favorites</a></li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark container-fluid\">\r\n    <div class=\"container-fluid\">\r\n        <a href=\"\" class=\"navbar navbar-brand text-danger mr-5 name\">NETFLIX</a>\r\n        <a href=\"\" class=\"navbar navbar-brand text-danger mr-5 logo\">N</a>\r\n        <form class=\"form-inline\" style=\"display:inline-block;\">\r\n            <input type=\"text\" class=\"form-control my-sm-0\" />\r\n            <button class=\"btn btn-danger\" type=\"submit\">\r\n                <i class=\"fa fa-search\"></i></button>\r\n        </form>\r\n        <button class=\"navbar-toggler\" data-toggle=\"collapse\" data-target=\"#netresponsive\">\r\n            <span class=\"navbar-toggler-icon\"></span>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse ml-5 float-right\" id=\"netresponsive\">\r\n            <ul class=\"navbar-nav list-inline\">\r\n                <li class=\"nav-item list-inline-item\"><a class=\"nav-link\" [routerLink]=\"['/movies']\"\r\n                        routerLinkActive=\"active\">Movies</a></li>\r\n                <li class=\"nav-item list-inline-item\"><a class=\"nav-link\" [routerLink]=\"['/tvshows']\">TV/Shows</a></li>\r\n                <li class=\"nav-item list-inline-item\"><a class=\"nav-link\" [routerLink]=\"['/favorite']\">Favorites</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>"
 
 /***/ }),
 
@@ -368,7 +406,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <div class=\"row\">\r\n        <navbar></navbar>\r\n    </div>\r\n    <hr>\r\n    <router-outlet></router-outlet>\r\n    <div class=\"row\">\r\n        <footer-app></footer-app>\r\n    </div>\r\n </div>"
+module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n        <navbar></navbar>\r\n    </div>\r\n    <hr>\r\n    <router-outlet></router-outlet>\r\n    <div class=\"row\">\r\n        <footer-app></footer-app>\r\n    </div>\r\n </div>"
 
 /***/ }),
 
@@ -456,11 +494,11 @@ var MoviesService = /** @class */ (function () {
     function MoviesService() {
     }
     MoviesService.prototype.getMovies = function () {
-        return movies.splice(0, 10);
+        return movies;
     };
     MoviesService.prototype.getMovie = function (id) {
         return movies.find(function (movie) { return movie.id === id; });
-        var movie;
+        //let movie:IMovie
         // const getByIdbase = "https://api.themoviedb.org/3/movie/"
         // const url = `${getByIdbase}${id}?api_key=${apikey}&&language=en-US`
         // return movie = fetch(url)
@@ -908,7 +946,7 @@ var TvShowsService = /** @class */ (function () {
     function TvShowsService() {
     }
     TvShowsService.prototype.getTvshows = function () {
-        return tvshows.splice(0, 10);
+        return tvshows;
     };
     TvShowsService.prototype.getTvshow = function (id) {
         return tvshows.find(function (tvshow) { return tvshow.id === id; });
@@ -1361,7 +1399,7 @@ __webpack_require__.r(__webpack_exports__);
 var TvShowsComponent = /** @class */ (function () {
     function TvShowsComponent(tvshowsService) {
         this.tvshowsService = tvshowsService;
-        this.baseimgUrl = "https://image.tmdb.org/t/p/w154";
+        this.baseimgUrl = "https://image.tmdb.org/t/p/w300";
     }
     TvShowsComponent.prototype.ngOnInit = function () {
         this.tvshows = this.tvshowsService.getTvshows();
@@ -1369,7 +1407,7 @@ var TvShowsComponent = /** @class */ (function () {
     TvShowsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'tv-shows',
-            template: "\n    <div class=\"row\">\n        <h4 class=\"col-sm-5 text-white\" style=\"margin-left: 0px\">TV Shows</h4>\n        <div class=\"col-sm-7\"></div>\n        <div class=\"row\">\n                <div class=\"well thumbnail m-2 col-md-3\" [routerLink]=\"['/tvshow', tvshow.id]\"  *ngFor=\"let tvshow of tvshows\"> \n                            <img class=\"img-responsive img-border\" height=\"80%\" my-5 width=\"100%\"  [src]=\"baseimgUrl+tvshow?.poster_path\" [alt]=\"tvshow?.name\"/><br>\n                            <span class=\"movie-title text-align-center text-white font-weight-16\">{{tvshow?.name}}</span><br>\n                            <span class=\"ml-1 text-white font-weight-16\">Popularity:<em class=\"badge bg-danger text-white\">{{tvshow?.popularity}}</em></span>\n                            <span class=\"ml-1 float-right text-white font-weight-16\">Vote:<em class=\"badge bg-success text-white\">{{tvshow?.vote_count}}</em></span><br>\n                            <span class=\"clearfix ml-1 text-white font-weight-16\">Released: {{tvshow?.first_air_date}}</span>\n                            \n                </div>\n        </div>\n    </div>",
+            template: "\n    <div class=\"row\">\n        <h4 class=\"col-sm-5 text-white\" style=\"margin-left: 0px\">TV Shows</h4>\n        <div class=\"col-sm-7\"></div>\n        <div class=\"row\">\n                <div class=\"well thumbnail m-2 col-md-3\" [routerLink]=\"['/tvshow', tvshow.id]\"  *ngFor=\"let tvshow of tvshows\"> \n                            <img class=\"img-responsive img-border\" height=\"80%\" my-5 width=\"100%\"  [src]=\"baseimgUrl+tvshow?.poster_path\" [alt]=\"tvshow?.name\"/><br>\n                            <span class=\"movie-title text-align-center text-white font-weight-16\">{{tvshow?.name}}</span><br>\n                            <span class=\"mr-1 text-white font-weight-16\">Popularity:<em class=\"badge bg-danger text-white\">{{tvshow?.popularity}}</em></span>\n                            <span class=\"mr-1 float-right text-white font-weight-16\">Vote:<em class=\"badge bg-success text-white\">{{tvshow?.vote_count}}</em></span><br>\n                            <span class=\"clearfix mr-1 text-white font-weight-16\">Released: <em class=\"float-right\">{{tvshow?.first_air_date | date}}</em></span>\n                            \n                </div>\n        </div>\n    </div>",
             styles: ["\n        .thumbnail{ \n          cursor: pointer;\n        }\n        .thumbnail:hover{\n          background-color: rgba(20,20,20,0.5);\n        }\n    "]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_tvshows_service__WEBPACK_IMPORTED_MODULE_2__["TvShowsService"]])

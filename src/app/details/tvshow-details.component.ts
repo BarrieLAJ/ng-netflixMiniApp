@@ -124,7 +124,7 @@ import { ActivatedRoute } from '@angular/router'
 
 export class TvShowDetailsComponent implements OnInit {
     tvshow:any
-    baseimgUrl =  "https://image.tmdb.org/t/p/w500"
+    baseimgUrl =  "https://image.tmdb.org/t/p/w1080"
     constructor(private tvshowService:TvShowsService, private router:ActivatedRoute){
 
     }
