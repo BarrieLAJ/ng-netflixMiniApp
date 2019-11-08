@@ -122,12 +122,11 @@ import { ActivatedRoute } from '@angular/router'
 
 export class MovieDetailsComponent implements OnInit {
     movie: any
-    baseimgUrl =  "https://image.tmdb.org/t/p/w1080"
+    baseimgUrl =  "https://image.tmdb.org/t/p/w1280"
     constructor(private movieService: MoviesService, private router: ActivatedRoute) {
 
     }
     ngOnInit() {
         this.movie = this.movieService.getMovie(+this.router.snapshot.params['id'])
-        console.log(this.movie)
     }
 }

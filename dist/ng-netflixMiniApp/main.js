@@ -165,11 +165,10 @@ var MovieDetailsComponent = /** @class */ (function () {
     function MovieDetailsComponent(movieService, router) {
         this.movieService = movieService;
         this.router = router;
-        this.baseimgUrl = "https://image.tmdb.org/t/p/w1080";
+        this.baseimgUrl = "https://image.tmdb.org/t/p/w1280";
     }
     MovieDetailsComponent.prototype.ngOnInit = function () {
         this.movie = this.movieService.getMovie(+this.router.snapshot.params['id']);
-        console.log(this.movie);
     };
     MovieDetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -218,7 +217,7 @@ var TvShowDetailsComponent = /** @class */ (function () {
     function TvShowDetailsComponent(tvshowService, router) {
         this.tvshowService = tvshowService;
         this.router = router;
-        this.baseimgUrl = "https://image.tmdb.org/t/p/w1080";
+        this.baseimgUrl = "https://image.tmdb.org/t/p/w1280";
     }
     TvShowDetailsComponent.prototype.ngOnInit = function () {
         this.tvshow = this.tvshowService.getTvshow(+this.router.snapshot.params['id']);
