@@ -7,23 +7,3 @@ body{
     scroll-behavior: smooth;
     color: rgb(224, 218, 218) !important;
 }
-nav{
-    /* position: fixed !important;
-    top: 0px;
-    display: inline-block !important;
-    z-index: 1; */
-    width: 100%;
-    background-color: rgba(25, 25, 27, 0.8);
-    border-radius: 1%;
-}
-@media all and (max-width: 969px){
-    nav .name{
-        display: none;
-    }
-    nav .logo{
-        display: block;
-    }
-}
-.logo {
-    display: none;
-}

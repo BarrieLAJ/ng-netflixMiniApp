@@ -45,8 +45,8 @@ import { ActivatedRoute } from '@angular/router'
     }
     @media all and (max-width: 515px){
         .backdrop-wraper .grid .content-wrap{
-            position: absolute;
-            top: 65%;
+            position: relative;
+            top: 10%;
             left: 10%;
         }
     }
@@ -130,6 +130,5 @@ export class TvShowDetailsComponent implements OnInit {
     }
     ngOnInit(){
         this.tvshow = this.tvshowService.getTvshow(+this.router.snapshot.params['id'])
-        console.log(this.tvshow)
     }
 }

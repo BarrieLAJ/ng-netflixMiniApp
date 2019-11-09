@@ -11,7 +11,7 @@
     </div>
     <div class="movie-info">
         <div class="info-wrap">
-            <p class="info">Aired</p><span class="pad-right badge">{{movie?.first_air_date | date}}</span>
+            <p class="info">Aired</p><span class="pad-right badge">{{movie?.release_date | date}}</span>
         </div>
         <div class="info-wrap">
             <p class="info">Length</p><span class="pad-right badge">12<!--{{movie?.runtime | number}}--></span>
@@ -20,7 +20,7 @@
             <p class="info">Porpularity</p><span class="pad-right badge">{{movie?.popularity | number: '1.0-0'}}</span>
         </div>
         <div class="info-wrap">
-            <p class="info">Vote</p><span class="pad-right badge">{{movie?.vote_average | percent: '0.0-0'}}</span>
+            <p class="info">Vote</p><span class="pad-right badge">{{movie?.vote_average/10 | percent: '0.0-0'}}</span>
         </div>
         <div class="info-wrap">
             <p class="info">Votes</p><span class="pad-right badge">{{movie?.vote_count}}</span>

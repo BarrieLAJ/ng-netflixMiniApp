@@ -49,7 +49,6 @@ export class MoviesComponent implements OnInit {
     }
     ngOnInit(){
       this.movies = this.movieService.getMovies()
-      console.log(this.movies)
     }
 
 }

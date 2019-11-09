@@ -20,7 +20,7 @@
             <p class="info">Porpularity</p><span class="pad-right badge">{{tvshow?.popularity | number: '1.0-0'}}</span>
         </div>
         <div class="info-wrap">
-            <p class="info">Vote</p><span class="pad-right badge">{{tvshow?.vote_average | percent: '0.0-0'}}</span>
+            <p class="info">Vote</p><span class="pad-right badge">{{tvshow?.vote_average/10 | percent: '0.0-0'}}</span>
         </div>
         <div class="info-wrap">
             <p class="info">Votes</p><span class="pad-right badge">{{tvshow?.vote_count}}</span>
