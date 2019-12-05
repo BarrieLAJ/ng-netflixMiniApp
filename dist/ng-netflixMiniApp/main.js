@@ -37,18 +37,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _netflixmini_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./netflixmini.component */ "./src/app/netflixmini.component.ts");
-/* harmony import */ var _navbar_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./navbar.component */ "./src/app/navbar.component.ts");
-/* harmony import */ var _favorite_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./favorite.component */ "./src/app/favorite.component.ts");
-/* harmony import */ var _tvshows_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./tvshows.component */ "./src/app/tvshows.component.ts");
-/* harmony import */ var _details_movie_details_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./details/movie-details.component */ "./src/app/details/movie-details.component.ts");
-/* harmony import */ var _details_tvshow_details_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./details/tvshow-details.component */ "./src/app/details/tvshow-details.component.ts");
-/* harmony import */ var _search_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./search.component */ "./src/app/search.component.ts");
-/* harmony import */ var _footer_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./footer.component */ "./src/app/footer.component.ts");
-/* harmony import */ var _services_movies_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/movies.service */ "./src/app/services/movies.service.ts");
-/* harmony import */ var _services_tvshows_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./services/tvshows.service */ "./src/app/services/tvshows.service.ts");
-/* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./app.routes */ "./src/app/app.routes.ts");
-/* harmony import */ var _movies_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./movies.component */ "./src/app/movies.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _netflixmini_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./netflixmini.component */ "./src/app/netflixmini.component.ts");
+/* harmony import */ var _navbar_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./navbar.component */ "./src/app/navbar.component.ts");
+/* harmony import */ var _favorite_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./favorite.component */ "./src/app/favorite.component.ts");
+/* harmony import */ var _tvshows_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./tvshows.component */ "./src/app/tvshows.component.ts");
+/* harmony import */ var _details_movie_details_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./details/movie-details.component */ "./src/app/details/movie-details.component.ts");
+/* harmony import */ var _details_tvshow_details_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./details/tvshow-details.component */ "./src/app/details/tvshow-details.component.ts");
+/* harmony import */ var _search_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./search.component */ "./src/app/search.component.ts");
+/* harmony import */ var _footer_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./footer.component */ "./src/app/footer.component.ts");
+/* harmony import */ var _services_movies_service__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./services/movies.service */ "./src/app/services/movies.service.ts");
+/* harmony import */ var _services_tvshows_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./services/tvshows.service */ "./src/app/services/tvshows.service.ts");
+/* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./app.routes */ "./src/app/app.routes.ts");
+/* harmony import */ var _movies_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./movies.component */ "./src/app/movies.component.ts");
+
 
 
 
@@ -72,22 +74,23 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _netflixmini_component__WEBPACK_IMPORTED_MODULE_4__["NetFlixMiniComponent"],
-                _navbar_component__WEBPACK_IMPORTED_MODULE_5__["NavbarComponent"],
-                _details_movie_details_component__WEBPACK_IMPORTED_MODULE_8__["MovieDetailsComponent"],
-                _details_tvshow_details_component__WEBPACK_IMPORTED_MODULE_9__["TvShowDetailsComponent"],
-                _tvshows_component__WEBPACK_IMPORTED_MODULE_7__["TvShowsComponent"],
-                _movies_component__WEBPACK_IMPORTED_MODULE_15__["MoviesComponent"],
-                _search_component__WEBPACK_IMPORTED_MODULE_10__["SearchComponent"],
-                _favorite_component__WEBPACK_IMPORTED_MODULE_6__["FavoriteMoviesComponent"],
-                _footer_component__WEBPACK_IMPORTED_MODULE_11__["FooterComponent"]
+                _netflixmini_component__WEBPACK_IMPORTED_MODULE_5__["NetFlixMiniComponent"],
+                _navbar_component__WEBPACK_IMPORTED_MODULE_6__["NavbarComponent"],
+                _details_movie_details_component__WEBPACK_IMPORTED_MODULE_9__["MovieDetailsComponent"],
+                _details_tvshow_details_component__WEBPACK_IMPORTED_MODULE_10__["TvShowDetailsComponent"],
+                _tvshows_component__WEBPACK_IMPORTED_MODULE_8__["TvShowsComponent"],
+                _movies_component__WEBPACK_IMPORTED_MODULE_16__["MoviesComponent"],
+                _search_component__WEBPACK_IMPORTED_MODULE_11__["SearchComponent"],
+                _favorite_component__WEBPACK_IMPORTED_MODULE_7__["FavoriteMoviesComponent"],
+                _footer_component__WEBPACK_IMPORTED_MODULE_12__["FooterComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_app_routes__WEBPACK_IMPORTED_MODULE_14__["appRoutes"])
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forRoot(_app_routes__WEBPACK_IMPORTED_MODULE_15__["appRoutes"]),
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"]
             ],
-            providers: [_services_movies_service__WEBPACK_IMPORTED_MODULE_12__["MoviesService"], _services_tvshows_service__WEBPACK_IMPORTED_MODULE_13__["TvShowsService"]],
-            bootstrap: [_netflixmini_component__WEBPACK_IMPORTED_MODULE_4__["NetFlixMiniComponent"]]
+            providers: [_services_movies_service__WEBPACK_IMPORTED_MODULE_13__["MoviesService"], _services_tvshows_service__WEBPACK_IMPORTED_MODULE_14__["TvShowsService"]],
+            bootstrap: [_netflixmini_component__WEBPACK_IMPORTED_MODULE_5__["NetFlixMiniComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -139,7 +142,7 @@ var appRoutes = [
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"backdrop-wraper\">\r\n        <img [src]=\"baseimgUrl+movie?.backdrop_path\" alt=\"nothing\" class=\"bg-img\">\r\n        <div class=\"grid\">\r\n            <div class=\"content-wrap\">\r\n                <h1 class=\"movie-title\">{{movie?.title  | uppercase}}</h1>\r\n                <p class=\"movie-overview1\">{{movie?.overview}}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"grid\"></div>\r\n    </div>\r\n    <div class=\"movie-info\">\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Aired</p><span class=\"pad-right badge\">{{movie?.release_date | date}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Length</p><span class=\"pad-right badge\">12<!--{{movie?.runtime | number}}--></span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Porpularity</p><span class=\"pad-right badge\">{{movie?.popularity | number: '1.0-0'}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Vote</p><span class=\"pad-right badge\">{{movie?.vote_average/10 | percent: '0.0-0'}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Votes</p><span class=\"pad-right badge\">{{movie?.vote_count}}</span>\r\n        </div>\r\n    </div>\r\n    <!-- Gernes -->\r\n    <div class=\"genres\">\r\n        <h2 class=\"sec-name\">Genres</h2>\r\n        <ul>\r\n            <li *ngFor=\"let genre of movie?.genre_ids\" class=\"genre\">{{genre}}</li>\r\n        </ul>\r\n    </div>\r\n    <!-- Overview -->\r\n    <div class=\"overview\">\r\n        <h2 class=\"sec-name\">Overview</h2>\r\n        <p class=\"movie-overview\">{{movie?.overview}}</p>\r\n    </div>\r\n    <!-- Casts -->\r\n    <div class=\"casts\">\r\n        <h2 class=\"sec-name\">Casts</h2>\r\n        <ul>\r\n            <li *ngFor=\"let genre of movie?.genre_ids\" class=\"cast\">{{genre}}</li>\r\n        </ul>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container-fluid\">\r\n    <div class=\"backdrop-wraper\">\r\n        <img [src]=\"baseimgUrl+movie?.backdrop_path\" alt=\"nothing\" class=\"bg-img\">\r\n        <div class=\"grid\">\r\n            <div class=\"content-wrap\">\r\n                <h1 class=\"movie-title\">{{movie?.title  | uppercase}}</h1>\r\n                <p class=\"movie-overview1\">{{movie?.overview}}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"grid\"></div>\r\n    </div>\r\n    <div class=\"movie-info\">\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Aired</p><span class=\"pad-right badge\">{{movie?.release_date | date}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Length</p><span class=\"pad-right badge\">{{movie?.runtime/60 | number}}hrs</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Porpularity</p><span class=\"pad-right badge\">{{movie?.popularity | number: '1.0-0'}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Vote</p><span class=\"pad-right badge\">{{movie?.vote_average/10 | percent: '0.0-0'}}</span>\r\n        </div>\r\n        <div class=\"info-wrap\">\r\n            <p class=\"info\">Votes</p><span class=\"pad-right badge\">{{movie?.vote_count}}</span>\r\n        </div>\r\n    </div>\r\n    <!-- Gernes -->\r\n    <div class=\"genres\">\r\n        <h2 class=\"sec-name\">Genres</h2>\r\n        <ul>\r\n            <li *ngFor=\"let genre of movie?.genres\" class=\"genre\">{{genre.name}}</li>\r\n        </ul>\r\n    </div>\r\n    <!-- Overview -->\r\n    <div class=\"overview\">\r\n        <h2 class=\"sec-name\">Overview</h2>\r\n        <p class=\"movie-overview\">{{movie?.overview}}</p>\r\n    </div>\r\n    <!-- Casts -->\r\n    <div class=\"casts\">\r\n        <h2 class=\"sec-name\">Casts</h2>\r\n        <ul>\r\n            <li *ngFor=\"let genre of movie?.genre_ids\" class=\"cast\">{{genre}}</li>\r\n        </ul>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -168,7 +171,11 @@ var MovieDetailsComponent = /** @class */ (function () {
         this.baseimgUrl = "https://image.tmdb.org/t/p/w1280";
     }
     MovieDetailsComponent.prototype.ngOnInit = function () {
-        this.movie = this.movieService.getMovie(+this.router.snapshot.params['id']);
+        var _this = this;
+        this.movieService.getMovie(+this.router.snapshot.params['id']).subscribe(function (movie) {
+            _this.movie = movie;
+            console.log(_this.movie);
+        });
     };
     MovieDetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -336,7 +343,10 @@ var MoviesComponent = /** @class */ (function () {
         this.baseimgUrl = "https://image.tmdb.org/t/p/w300";
     }
     MoviesComponent.prototype.ngOnInit = function () {
-        this.movies = this.movieService.getMovies();
+        var _this = this;
+        this.movieService.getMovies().subscribe(function (movies) {
+            _this.movies = movies.results;
+        });
     };
     MoviesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -479,6 +489,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MoviesService", function() { return MoviesService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+
+
+
 
 
 // "node_modules/popper.js/dist/umd/popper.js",
@@ -488,23 +504,33 @@ var apikey = "da51ab669d96ca4f1f9aa7cc589baec8";
 //const searchSample = https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
 //const getByIdbase = "https://api.themoviedb.org/3/movie/"
 var MoviesService = /** @class */ (function () {
-    function MoviesService() {
+    function MoviesService(http) {
+        this.http = http;
     }
     MoviesService.prototype.getMovies = function () {
-        return movies;
+        var getByIdbase = 'https://api.themoviedb.org/3/movie/';
+        // tslint:disable-next-line: max-line-length
+        var url = "https://api.themoviedb.org/3/discover/movie?api_key=da51ab669d96ca4f1f9aa7cc589baec8&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
+        return this.http.get(url)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('getMovies')));
     };
     MoviesService.prototype.getMovie = function (id) {
-        return movies.find(function (movie) { return movie.id === id; });
-        //let movie:IMovie
-        // const getByIdbase = "https://api.themoviedb.org/3/movie/"
-        // const url = `${getByIdbase}${id}?api_key=${apikey}&&language=en-US`
-        // return movie = fetch(url)
-        // .then(response => response.json())
-        // .then(data => {return data})
-        // .catch(error => console.log(error))
+        // return movies.find(movie => movie.id === id)
+        var getByIdbase = 'https://api.themoviedb.org/3/movie/';
+        var url = "" + getByIdbase + id + "?api_key=" + apikey + "&&language=en-US";
+        return this.http.get(url)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(this.handleError('getMovie')));
+    };
+    MoviesService.prototype.handleError = function (operation, result) {
+        if (operation === void 0) { operation = 'operation'; }
+        return function (error) {
+            console.error(error);
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(result);
+        };
     };
     MoviesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"]])
     ], MoviesService);
     return MoviesService;
 }());

@@ -1,8 +1,12 @@
-import { Injectable } from '@angular/core'
-import { IMovie } from './movie.model'
-import { IMovies } from './movies.model'
+import { Injectable } from '@angular/core';
+import { IMovie } from './movie.model';
+import {Observable, of} from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { IMovies } from './movies.model';
+import { HttpClient } from '@angular/common/http';
+import { IMovieRes } from './moviesres.model';
 // "node_modules/popper.js/dist/umd/popper.js",
-const apikey = "da51ab669d96ca4f1f9aa7cc589baec8"
+const apikey = "da51ab669d96ca4f1f9aa7cc589baec8";
 //const baseUrl = https://api.themoviedb.org/3/
 //const allMoviesUrl = https://api.themoviedb.org/3/discover/movie?api_key=da51ab669d96ca4f1f9aa7cc589baec8&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=2
 //const searchSample = https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
@@ -11,18 +15,30 @@ const apikey = "da51ab669d96ca4f1f9aa7cc589baec8"
 @Injectable()
 
 export class MoviesService {
-    getMovies(){
-        return movies
+    constructor(private http: HttpClient) {
+
     }
-    getMovie(id){
-        return movies.find(movie => movie.id === id)
-         //let movie:IMovie
-        // const getByIdbase = "https://api.themoviedb.org/3/movie/"
-        // const url = `${getByIdbase}${id}?api_key=${apikey}&&language=en-US`
-        // return movie = fetch(url)
-        // .then(response => response.json())
-        // .then(data => {return data})
-        // .catch(error => console.log(error))
+    getMovies(): Observable <IMovieRes>{
+        const getByIdbase = 'https://api.themoviedb.org/3/movie/';
+        // tslint:disable-next-line: max-line-length
+        const url = `https://api.themoviedb.org/3/discover/movie?api_key=da51ab669d96ca4f1f9aa7cc589baec8&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
+        return this.http.get<IMovieRes>(url)
+            .pipe(catchError(this.handleError<IMovieRes>('getMovies')));
+    }
+    getMovie(id): Observable<IMovie> {
+       // return movies.find(movie => movie.id === id)
+        const getByIdbase = 'https://api.themoviedb.org/3/movie/';
+        const url = `${getByIdbase}${id}?api_key=${apikey}&&language=en-US`;
+        return this.http.get<IMovie>(url)
+            .pipe(catchError(this.handleError<IMovie>('getMovie')));
+
+    }
+
+    private handleError<T> (operation = 'operation', result?: T) {
+        return (error: any): Observable<T>  => {
+            console.error(error);
+            return of(result as T);
+        }
     }
 }
 

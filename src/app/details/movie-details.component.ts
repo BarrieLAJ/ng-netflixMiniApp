@@ -129,6 +129,9 @@ export class MovieDetailsComponent implements OnInit {
 
     }
     ngOnInit() {
-        this.movie = this.movieService.getMovie(+this.router.snapshot.params['id'])
+        this.movieService.getMovie(+this.router.snapshot.params['id']).subscribe((movie) => {
+            this.movie = movie;
+            console.log(this.movie)
+        });
     }
 }

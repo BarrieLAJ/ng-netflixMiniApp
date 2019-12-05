@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { MoviesService } from './services/movies.service'
+import { IMovies } from './services/movies.model';
+import { IMovieRes } from './services/moviesres.model';
 
 
 @Component({
@@ -48,7 +50,9 @@ export class MoviesComponent implements OnInit {
 
     }
     ngOnInit(){
-      this.movies = this.movieService.getMovies()
+     this.movieService.getMovies().subscribe((movies: IMovieRes) => {
+      this.movies = movies.results;
+     });
     }
 
 }

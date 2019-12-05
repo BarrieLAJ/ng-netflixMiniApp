@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 import { NetFlixMiniComponent } from './netflixmini.component';
 import { NavbarComponent } from './navbar.component';
@@ -10,8 +11,8 @@ import { MovieDetailsComponent } from './details/movie-details.component';
 import { TvShowDetailsComponent } from './details/tvshow-details.component';
 import { SearchComponent } from './search.component';
 import { FooterComponent } from './footer.component';
-import { MoviesService } from './services/movies.service'
-import { TvShowsService } from './services/tvshows.service'
+import { MoviesService } from './services/movies.service';
+import { TvShowsService } from './services/tvshows.service';
 import { appRoutes } from './app.routes';
 import { MoviesComponent } from './movies.component';
 //api = http://www.omdbapi.com/?apikey=da0f4436&s=avengers
@@ -29,7 +30,8 @@ import { MoviesComponent } from './movies.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [ MoviesService, TvShowsService  ],
   bootstrap: [NetFlixMiniComponent]

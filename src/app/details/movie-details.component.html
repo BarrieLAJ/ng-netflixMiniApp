@@ -14,7 +14,7 @@
             <p class="info">Aired</p><span class="pad-right badge">{{movie?.release_date | date}}</span>
         </div>
         <div class="info-wrap">
-            <p class="info">Length</p><span class="pad-right badge">12<!--{{movie?.runtime | number}}--></span>
+            <p class="info">Length</p><span class="pad-right badge">{{movie?.runtime/60 | number}}hrs</span>
         </div>
         <div class="info-wrap">
             <p class="info">Porpularity</p><span class="pad-right badge">{{movie?.popularity | number: '1.0-0'}}</span>
@@ -30,7 +30,7 @@
     <div class="genres">
         <h2 class="sec-name">Genres</h2>
         <ul>
-            <li *ngFor="let genre of movie?.genre_ids" class="genre">{{genre}}</li>
+            <li *ngFor="let genre of movie?.genres" class="genre">{{genre.name}}</li>
         </ul>
     </div>
     <!-- Overview -->
