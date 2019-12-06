@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { TvShowsService } from '../services/tvshows.service'
 import { ActivatedRoute } from '@angular/router'
+import { ITvshow } from '../services/tvshow.model'
 
 @Component({
     templateUrl: './tvshow-details.component.html',
@@ -123,12 +124,14 @@ import { ActivatedRoute } from '@angular/router'
 })
 
 export class TvShowDetailsComponent implements OnInit {
-    tvshow:any
+    tvshow: ITvshow;
     baseimgUrl =  "https://image.tmdb.org/t/p/w1280"
     constructor(private tvshowService:TvShowsService, private router:ActivatedRoute){
 
     }
     ngOnInit(){
-        this.tvshow = this.tvshowService.getTvshow(+this.router.snapshot.params['id'])
+        this.tvshowService.getTvshow(+this.router.snapshot.params['id']).subscribe((tvshow: ITvshow) => {
+            this.tvshow = tvshow;
+        });
     }
 }

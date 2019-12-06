@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { TvShowsService } from './services/tvshows.service'
+import { ITvshowRes } from './services/tvshowsres,model';
 
 @Component({
     selector: 'tv-shows',
@@ -31,10 +32,12 @@ import { TvShowsService } from './services/tvshows.service'
 export class TvShowsComponent implements OnInit {
     tvshows:any
     baseimgUrl =  "https://image.tmdb.org/t/p/w300"
-    constructor(private tvshowsService: TvShowsService){
+    constructor(private tvshowsService: TvShowsService) {
 
     }
     ngOnInit(){
-        this.tvshows =  this.tvshowsService.getTvshows()
+      this.tvshowsService.getTvshows().subscribe( (tvshows:ITvshowRes) => {
+        this.tvshows = tvshows.results;
+      });
     }
 }

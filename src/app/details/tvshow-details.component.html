@@ -14,7 +14,7 @@
             <p class="info">Aired</p><span class="pad-right badge">{{tvshow?.first_air_date | date}}</span>
         </div>
         <div class="info-wrap">
-            <p class="info">Length</p><span class="pad-right badge">12<!--{{tvshow?.runtime | number}}--></span>
+            <p class="info">Seasons</p><span class="pad-right badge">{{tvshow?.seasons.length | number}}</span>
         </div>
         <div class="info-wrap">
             <p class="info">Porpularity</p><span class="pad-right badge">{{tvshow?.popularity | number: '1.0-0'}}</span>
@@ -30,7 +30,7 @@
     <div class="genres">
         <h2 class="sec-name">Genres</h2>
         <ul>
-            <li *ngFor="let genre of tvshow?.genre_ids" class="genre">{{genre}}</li>
+            <li *ngFor="let genre of tvshow?.genres" class="genre">{{genre.name}}</li>
         </ul>
     </div>
     <!-- Overview -->
@@ -42,7 +42,7 @@
     <div class="casts">
         <h2 class="sec-name">Casts</h2>
         <ul>
-            <li *ngFor="let genre of tvshow?.genre_ids" class="cast">{{genre}}</li>
+            <li *ngFor="let genre of tvshow?.genres" class="cast">{{genre.name}}</li>
         </ul>
     </div>
 </div>
